@@ -4,8 +4,6 @@
       <h1>Jerry Braun | hope.-</h1>
       <p>German Software Engineer</p>
     </div>
-    <div class="welcome-wave">
-    </div>
   </div>
 </template>
 
@@ -31,7 +29,6 @@ export default Vue.extend({
     p {
       font-size: 20px;
       margin-left: 10px;
-      color: #a66cb8;
     }
   }
 }
