@@ -2,8 +2,7 @@
   <v-app id="app">
     <v-toolbar-items>
       <v-list-item>
-        <v-list-item-content>
-        </v-list-item-content>
+        <v-spacer></v-spacer>
         <v-list-item-action>
           <v-switch v-model="$vuetify.theme.dark"/>
         </v-list-item-action>
@@ -16,16 +15,14 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import Component from 'vue-class-component';
 
-export default Vue.extend({
-  name: 'App',
-
-  computed: {
-    theme() {
-      return (this.$vuetify.theme.dark) ? 'dark' : 'light';
-    },
-  },
-});
+@Component({})
+export default class App extends Vue {
+  theme(): string {
+    return (this.$vuetify.theme.dark) ? 'dark' : 'light';
+  }
+}
 </script>
 
 <style lang="scss">

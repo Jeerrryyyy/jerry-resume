@@ -6,10 +6,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import Component from 'vue-class-component';
 
-export default Vue.extend({
-  name: 'AboutMe',
-});
+@Component({})
+export default class AboutMeComponent extends Vue {
+}
 </script>
 
 <style lang="scss">

@@ -10,12 +10,10 @@
       131,0C87.3,0,44,0,22,0L0,0Z"></path>
     </svg>
     <div class="welcome">
-      <v-card elevation="12" class="welcome-card">
-        <div class="welcome-text">
-          <h1>Jerry Braun</h1>
-          <p>German Software Engineer</p>
-        </div>
-      </v-card>
+      <div class="welcome-text">
+        <h1>Jerry Braun</h1>
+        <p>German Software Engineer</p>
+      </div>
       <a v-scroll-to="'#aboutme-container'" href="#">
         <v-icon class="welcome-arrow">mdi-arrow-down-thick</v-icon>
       </a>
@@ -25,16 +23,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import Component from 'vue-class-component';
 
-export default Vue.extend({
-  name: 'Welcome',
-
-  computed: {
-    theme() {
-      return (this.$vuetify.theme.dark) ? 'dark' : 'light';
-    },
-  },
-});
+@Component({})
+export default class WelcomeComponent extends Vue {
+}
 </script>
 
 <style lang="scss">
@@ -54,25 +47,20 @@ export default Vue.extend({
 
     margin-top: -5em;
 
-    .welcome-card {
-      background-color: var(--v-background-base);
-      border-radius: 10px;
+    .welcome-text {
+      margin-bottom: 1em;
+      padding: 0 1em 0 1em;
+      border-radius: 15px;
+      width: fit-content;
 
-      .welcome-text {
-        margin-bottom: 1em;
-        padding: 0 1em 0 1em;
-        border-radius: 15px;
-        width: fit-content;
+      h1 {
+        margin: 0;
+        font-size: 6em;
+      }
 
-        h1 {
-          margin: 0;
-          font-size: 6em;
-        }
-
-        p {
-          margin-top: -.5em;
-          font-size: 2em;
-        }
+      p {
+        margin-top: -.5em;
+        font-size: 2em;
       }
     }
 
