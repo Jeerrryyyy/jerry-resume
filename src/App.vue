@@ -1,18 +1,16 @@
 <template>
-  <v-app :style="{background: $vuetify.theme.themes[theme].background}">
-      <v-toolbar-items>
-        <v-list-item>
-          <v-list-item-content>
-          </v-list-item-content>
-          <v-list-item-action>
-            <v-switch v-model="$vuetify.theme.dark"/>
-          </v-list-item-action>
-        </v-list-item>
-        <v-divider/>
-      </v-toolbar-items>
-    <v-main>
-      <router-view/>
-    </v-main>
+  <v-app>
+    <v-toolbar-items>
+      <v-list-item>
+        <v-list-item-content>
+        </v-list-item-content>
+        <v-list-item-action>
+          <v-switch v-model="$vuetify.theme.dark"/>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider/>
+    </v-toolbar-items>
+    <router-view/>
   </v-app>
 </template>
 
@@ -33,6 +31,10 @@ export default Vue.extend({
 <style lang="scss">
 html {
   overflow-y: auto !important;
+}
+
+.v-toolbar__items {
+  background: var(--v-secondary-base);
 }
 
 ::-webkit-scrollbar {

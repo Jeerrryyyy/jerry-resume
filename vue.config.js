@@ -5,7 +5,7 @@ module.exports = {
   css: {
     loaderOptions: {
       scss: {
-        additionalData: '@import "@/assets/colors.scss";',
+        additionalData: '@import "@/assets/colors.scss"; @import "@/assets/normalize.scss";',
       },
     },
   },
