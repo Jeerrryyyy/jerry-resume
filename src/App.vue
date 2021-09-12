@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="app">
     <v-toolbar-items>
       <v-list-item>
         <v-list-item-content>
@@ -33,6 +33,10 @@ html {
   overflow-y: auto !important;
 }
 
+#app {
+  background-color: var(--v-background-base);
+}
+
 .v-toolbar__items {
   background: var(--v-secondary-base);
 }
@@ -42,15 +46,15 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #121212;
+  background: var(--v-background-lighten1);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #a66cb8;
+  background: var(--v-secondary-darken2);
   border-radius: 12px;
-}
 
-::-webkit-scrollbar-thumb:hover {
-  background: darken(#a66cb8, 10)
+  &:hover {
+    background: var(--v-secondary-darken3);
+  }
 }
 </style>

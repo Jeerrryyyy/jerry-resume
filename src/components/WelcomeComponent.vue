@@ -10,11 +10,15 @@
       131,0C87.3,0,44,0,22,0L0,0Z"></path>
     </svg>
     <div class="welcome">
-      <div class="welcome-text">
-        <h1>Jerry Braun</h1>
-        <p>German Software Engineer</p>
-      </div>
-      <v-icon class="welcome-arrow">mdi-arrow-down-thick</v-icon>
+      <v-card elevation="12" class="welcome-card">
+        <div class="welcome-text">
+          <h1>Jerry Braun</h1>
+          <p>German Software Engineer</p>
+        </div>
+      </v-card>
+      <a v-scroll-to="'#aboutme-container'" href="#">
+        <v-icon class="welcome-arrow">mdi-arrow-down-thick</v-icon>
+      </a>
     </div>
   </div>
 </template>
@@ -50,40 +54,48 @@ export default Vue.extend({
 
     margin-top: -5em;
 
-    .welcome-text {
-      background-color: rgba(0, 0, 0, 0.1);
+    .welcome-card {
+      background-color: var(--v-background-base);
+      border-radius: 10px;
 
-      margin-bottom: 3em;
-      padding: 0 1em 0 1em;
-      border-radius: 15px;
-      width: fit-content;
+      .welcome-text {
+        margin-bottom: 1em;
+        padding: 0 1em 0 1em;
+        border-radius: 15px;
+        width: fit-content;
 
-      h1 {
-        margin: 0;
-        font-size: 6em;
-      }
+        h1 {
+          margin: 0;
+          font-size: 6em;
+        }
 
-      p {
-        margin-top: -.5em;
-        font-size: 2em;
+        p {
+          margin-top: -.5em;
+          font-size: 2em;
+        }
       }
     }
 
-    .welcome-arrow {
-      font-size: 4em;
-      color: var(--v-secondary-base);
-      animation: animateArrow 2000ms ease-in-out infinite;
+    a {
+      margin-top: 1em;
+      text-decoration: none;
 
-      border: 2px solid var(--v-secondary-base);
-      border-radius: 20%;
-      cursor: pointer;
+      .welcome-arrow {
+        font-size: 4em;
+        color: var(--v-secondary-base);
+        animation: animateArrow 2000ms ease-in-out infinite;
 
-      transition: .5s;
+        border: 2px solid var(--v-secondary-base);
+        border-radius: 20%;
+        cursor: pointer;
 
-      &:hover {
-        background: var(--v-secondary-base);
+        transition: .5s;
 
-        color: var(--v-primary-base);
+        &:hover {
+          background: var(--v-secondary-base);
+
+          color: var(--v-background-base);
+        }
       }
     }
   }

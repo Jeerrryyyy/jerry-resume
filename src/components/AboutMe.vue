@@ -1,6 +1,6 @@
 <template>
-  <div class="aboutme-container">
-    <h1>Hey</h1>
+  <div class="aboutme-container" id="aboutme-container">
+    <h1>Hello, World!</h1>
   </div>
 </template>
 
@@ -13,5 +13,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-
+.aboutme-container {
+  margin-top: 20em;
+  margin-bottom: 20em;
+}
 </style>

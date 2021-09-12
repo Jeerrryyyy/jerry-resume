@@ -18,6 +18,7 @@ export default new Vuetify({
         info: '#2196F3',
         warning: '#FB8C00',
         error: '#FF5252',
+        background: '#121212',
       },
       light: {
         primary: '#1976D2',
@@ -27,6 +28,7 @@ export default new Vuetify({
         info: '#2196F3',
         warning: '#FB8C00',
         error: '#FF5252',
+        background: '#eeeeee',
       },
     },
   },
