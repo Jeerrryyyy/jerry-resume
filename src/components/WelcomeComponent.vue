@@ -1,11 +1,5 @@
 <template>
   <div class="container">
-    <div class="welcome">
-      <div class="welcome-text">
-        <h1>Jerry Braun</h1>
-        <p>German Software Engineer</p>
-      </div>
-    </div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path d="M0,64L21.8,74.7C43.6,85,87,107,131,101.3C174.5,96,218,64,262,74.7C305.5,85,349,139,
       393,144C436.4,149,480,107,524,80C567.3,53,611,43,655,85.3C698.2,128,742,224,785,229.3C829.1,
@@ -15,6 +9,13 @@
       0C741.8,0,698,0,655,0C610.9,0,567,0,524,0C480,0,436,0,393,0C349.1,0,305,0,262,0C218.2,0,175,0,
       131,0C87.3,0,44,0,22,0L0,0Z"></path>
     </svg>
+    <div class="welcome">
+      <div class="welcome-text">
+        <h1>Jerry Braun</h1>
+        <p>German Software Engineer</p>
+      </div>
+      <v-icon class="welcome-arrow">mdi-arrow-down-thick</v-icon>
+    </div>
   </div>
 </template>
 
@@ -34,43 +35,57 @@ export default Vue.extend({
 
 <style lang="scss">
 .container {
-  .welcome {
-    padding: 10vw 0 2vw 15vw;
-    background: var(--v-secondary-base);
-
-    .welcome-text {
-      background-color: rgba(0, 0, 0, 0.1);
-
-      padding: 15px;
-      border-radius: 15px;
-      width: fit-content;
-
-      h1 {
-        margin: 0;
-        font-size: 40px;
-      }
-
-      p {
-        margin: 0;
-        font-size: 20px;
-      }
-    }
-  }
-
   svg {
     fill: var(--v-secondary-base);
     transform-origin: top;
     animation: animateWave 2000ms cubic-bezier(.23, 1, .32, 1) forwards;
   }
-}
 
-@-webkit-keyframes animateWave {
-  0% {
-    transform: scale(1, 0)
-  }
+  .welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
 
-  100% {
-    transform: scale(1, 1)
+    margin-top: -5em;
+
+    .welcome-text {
+      background-color: rgba(0, 0, 0, 0.1);
+
+      margin-bottom: 3em;
+      padding: 0 1em 0 1em;
+      border-radius: 15px;
+      width: fit-content;
+
+      h1 {
+        margin: 0;
+        font-size: 6em;
+      }
+
+      p {
+        margin-top: -.5em;
+        font-size: 2em;
+      }
+    }
+
+    .welcome-arrow {
+      font-size: 4em;
+      color: var(--v-secondary-base);
+      animation: animateArrow 2000ms ease-in-out infinite;
+
+      border: 2px solid var(--v-secondary-base);
+      border-radius: 20%;
+      cursor: pointer;
+
+      transition: .5s;
+
+      &:hover {
+        background: var(--v-secondary-base);
+
+        color: var(--v-primary-base);
+      }
+    }
   }
 }
 
@@ -81,6 +96,20 @@ export default Vue.extend({
 
   100% {
     transform: scale(1, 1)
+  }
+}
+
+@keyframes animateArrow {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
 </style>
