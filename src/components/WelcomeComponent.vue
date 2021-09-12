@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="welcome-container">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path d="M0,64L21.8,74.7C43.6,85,87,107,131,101.3C174.5,96,218,64,262,74.7C305.5,85,349,139,
       393,144C436.4,149,480,107,524,80C567.3,53,611,43,655,85.3C698.2,128,742,224,785,229.3C829.1,
@@ -34,7 +34,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.container {
+.welcome-container {
   svg {
     fill: var(--v-secondary-base);
     transform-origin: top;
