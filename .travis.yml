@@ -7,8 +7,6 @@ node_js:
 
 before_install:
   - npm install -g npm
-  - npm cache verify
-  - npm prune
 
 install:
   - npm install
