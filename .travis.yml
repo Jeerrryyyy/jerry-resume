@@ -1,14 +1,39 @@
+sudo: false
+dist: trusty
 language: node_js
+
+cache:
+  directories:
+    - node_modules
+
 node_js:
   - "node"
 
-cache: npm
-script: npm install && npm run build
+matrix:
+  fast_finish: true
+
+before_install:
+  - npm install -g npm
+  - npm cache verify
+  - npm prune
+  - npm update
+
+install:
+  - npm install
+
+after_install:
+  - npm rebuild node-sass
+
+before_script:
+  - npm rebuild node-sass
+
+script:
+  - npm run build
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: dist
-  on:
-    branch: main
+    on:
+      branch: main
