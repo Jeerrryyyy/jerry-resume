@@ -21,9 +21,6 @@ before_install:
 install:
   - npm install
 
-after_install:
-  - npm rebuild node-sass
-
 before_script:
   - npm rebuild node-sass
 
